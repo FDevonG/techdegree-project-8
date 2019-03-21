@@ -1,0 +1,21 @@
+.employees {
+	
+	@include e('list') {
+		display:grid;
+		grid-template-columns: repeat(auto-fit, minmax(em(300px), 1fr));
+		justify-content: space-around;
+		
+		@include m('item') {
+			border-radius: $br;
+			border: 2px $grey-color solid;
+			@extend %clearfix;
+		}
+		
+	}
+	
+}
+
+.employeeImage {
+	border-radius: $br-round;
+	float: left;
+}
