@@ -1,3 +1,8 @@
+//************************************************************************
+//MIXINS
+//************************************************************************/
+
+
 //SELECTORS
 @mixin e ($element) {
 	&__#{$element} {
@@ -9,4 +14,12 @@
 	&--#{$modifier} {
 		@content;
 	}
+}
+
+//FLEXBOX
+@mixin flexy ($dis:flex, $dir:null, $wrap:null, $just: null) {
+	display:$dis;
+	flex-direction: $dir;
+	flex-wrap: $wrap;
+	justify-content: $just;
 }

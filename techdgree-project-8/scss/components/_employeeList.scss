@@ -1,21 +1,54 @@
+//************************************************************************
+//EMPLOYEE LIST
+//************************************************************************/
+
 .employees {
 	
 	@include e('list') {
 		display:grid;
-		grid-template-columns: repeat(auto-fit, minmax(em(300px), 1fr));
-		justify-content: space-around;
+		grid-gap:em(20px);
+		grid-template-columns: repeat(auto-fill, minmax(em(500px), 1fr));
+		padding: em(20px);
 		
 		@include m('item') {
 			border-radius: $br;
-			border: 2px $grey-color solid;
+			border: 2px $grey solid;
 			@extend %clearfix;
+			padding: em(20px);
+			cursor:pointer;
+			transition: transform 0.5;
+			
+			&:hover {
+				transform: scale(1.05);
+			}
+			
 		}
 		
 	}
 	
 }
 
-.employeeImage {
+.employee-image {
 	border-radius: $br-round;
 	float: left;
+	margin-right:em(20px);
+}
+
+.employee-name {
+	color:$black;
+}
+
+.employee-name,
+.employee-city {
+	text-transform: capitalize;
+}
+
+.employee-email,
+.employee-city {
+	color:$grey;
+}
+
+.employee-heading {
+	color : $black;
+	text-transform: uppercase;
 }

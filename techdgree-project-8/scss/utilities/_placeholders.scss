@@ -7,3 +7,11 @@
 	content: '';
 	clear: both;
 }
+
+%image-changer {
+	font-size: em(30px);
+	position : fixed;
+	vertical-align: middle;
+	color:$black;
+	cursor:pointer;
+}

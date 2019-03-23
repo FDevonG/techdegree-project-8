@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 /* line 11, ../scss/base/_normalize.scss */
 html {
   line-height: 1.15;
@@ -355,25 +356,177 @@ ul {
   content: '';
   clear: both; }
 
-/* line 3, ../scss/utilities/_mixins.scss */
+/* line 11, ../scss/utilities/_placeholders.scss */
+.previous-image,
+.next-image {
+  font-size: 1.875em;
+  position: fixed;
+  vertical-align: middle;
+  color: #595959;
+  cursor: pointer; }
+
+/* line 8, ../scss/utilities/_mixins.scss */
 .employees__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75em, 1fr));
-  justify-content: space-around; }
-  /* line 9, ../scss/utilities/_mixins.scss */
+  grid-gap: 1.25em;
+  grid-template-columns: repeat(auto-fill, minmax(31.25em, 1fr));
+  padding: 1.25em; }
+  /* line 14, ../scss/utilities/_mixins.scss */
   .employees__list--item {
     border-radius: 10px;
-    border: 2px #dfdfdf solid; }
+    border: 2px #8a9094 solid;
+    padding: 1.25em;
+    cursor: pointer;
+    transition: transform 0.5; }
+    /* line 21, ../scss/components/_employeeList.scss */
+    .employees__list--item:hover {
+      transform: scale(1.05); }
 
-/* line 18, ../scss/components/_employeeList.scss */
-.employeeImage {
+/* line 31, ../scss/components/_employeeList.scss */
+.employee-image {
   border-radius: 50%;
-  float: left; }
+  float: left;
+  margin-right: 1.25em; }
 
-/* line 5, ../scss/components/_general.scss */
+/* line 37, ../scss/components/_employeeList.scss */
+.employee-name {
+  color: #595959; }
+
+/* line 41, ../scss/components/_employeeList.scss */
+.employee-name,
+.employee-city {
+  text-transform: capitalize; }
+
+/* line 46, ../scss/components/_employeeList.scss */
+.employee-email,
+.employee-city {
+  color: #8a9094; }
+
+/* line 51, ../scss/components/_employeeList.scss */
+.employee-heading {
+  color: #595959;
+  text-transform: uppercase; }
+
+/* line 9, ../scss/components/_general.scss */
 #site-wrapper {
-  max-width: 75em;
+  max-width: 112.5em;
+  margin: 3.125em auto 0;
+  font-size: 1em;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "Sans Serif"; }
+
+/* line 16, ../scss/components/_general.scss */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0; }
+  /* line 22, ../scss/components/_general.scss */
+  .main-header a {
+    color: #595959;
+    margin: 0;
+    font-famly: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "Sans Serif"; }
+
+/* line 29, ../scss/components/_general.scss */
+#user-search {
+  display: inline-block;
+  height: 1.875em;
+  width: 40%;
+  max-width: 31.25em;
+  border-radius: 10px;
+  border: 2px solid #8a9094; }
+  /* line 37, ../scss/components/_general.scss */
+  #user-search::placeholder {
+    padding-left: 0.625em; }
+  /* line 41, ../scss/components/_general.scss */
+  #user-search:active, #user-search:focus {
+    outline: none; }
+
+/* line 5, ../scss/components/_overlay.scss */
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer; }
+
+/* line 19, ../scss/components/_overlay.scss */
+.overlay-relative {
+  display: relative; }
+
+/* line 23, ../scss/components/_overlay.scss */
+.overlay-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 28.125em;
   margin: auto;
-  border: 1px black solid; }
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5em;
+  border-radius: 10px;
+  border: 2px #8a9094 solid;
+  cursor: default;
+  box-shadow: 0.625em 0.625em 0.3125em #595959; }
+  /* line 40, ../scss/components/_overlay.scss */
+  .overlay-card:nth-child(1n+1) {
+    text-transform: capitalize; }
+
+/* line 46, ../scss/components/_overlay.scss */
+.overlay-image {
+  display: inline-block;
+  border-radius: 50%;
+  max-width: 12.5em;
+  margin: auto; }
+
+/* line 53, ../scss/components/_overlay.scss */
+.overlay-email {
+  text-transform: lowercase; }
+
+/* line 57, ../scss/components/_overlay.scss */
+.overlay-email,
+.overlay-city,
+.overlay-telephone,
+.overlay-address,
+.overlay-birthday {
+  color: #8a9094; }
+
+/* line 65, ../scss/components/_overlay.scss */
+.overlay-name,
+.overlay-exit {
+  color: #595959; }
+
+/* line 70, ../scss/components/_overlay.scss */
+.overlay-solid-line {
+  width: 100%;
+  height: 0.0625em;
+  background-color: #8a9094; }
+
+/* line 76, ../scss/components/_overlay.scss */
+.overlay-exit {
+  text-transform: uppercase;
+  position: fixed;
+  font-size: 1.25em;
+  cursor: pointer;
+  top: 0.625em;
+  right: 0.625em; }
+
+/* line 90, ../scss/components/_overlay.scss */
+.previous-image {
+  left: 0.625em; }
+
+/* line 94, ../scss/components/_overlay.scss */
+.next-image {
+  right: 0.625em; }
 
 /*# sourceMappingURL=styles.css.map */

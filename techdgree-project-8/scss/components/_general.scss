@@ -2,9 +2,45 @@
 //GENERAL
 //************************************************************************/
 
-#site-wrapper {
-	max-width: em($max-width);
-	margin: auto;
-	border:1px black solid;
+@if variable-exists (font-url--google) {
+	@import url($font-url--google);
 }
 
+#site-wrapper {
+	max-width: em($max-width);
+	margin:em(50px) auto 0;
+	font-size: em(16px);
+	font-family: $font-family--primary;
+}
+
+.main-header {
+	
+	@include flexy($just:space-between);
+	align-items: center;
+	margin:0;
+	
+	a {
+		color: $black;
+		margin: 0;
+		font-famly: $font-family--primary;
+	}
+}
+
+#user-search {
+	display: inline-block;
+	height : em(30px);
+	width:40%;
+	max-width:em(500px);
+	border-radius: $br;
+	border : 2px solid $grey;
+	
+	&::placeholder {
+		padding-left : em(10px);
+	}
+	
+	&:active,
+	&:focus {
+		outline:none;
+	}
+	
+}
