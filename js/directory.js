@@ -57,7 +57,7 @@ function generateEmployees (array) {
 		const employeeCity = array[i].location.city;
 		
 		employeeListHTML += '<li class="employees__list--item ' + i + '">';
-		employeeListHTML += '<img src='../techdgree-project-8/js/+ pictureURL + ' alt=' + employeeName +' class="employee-image">';
+		employeeListHTML += '<img src=' + pictureURL + ' alt=' + employeeName +' class="employee-image">';
 		employeeListHTML += '<h2 class="employee-name">'+ employeeName +'</h2>';
 		employeeListHTML += '<p class="employee-email">'+ employeeEmail +'</p>';
 		employeeListHTML += '<p class="employee-city">' + employeeCity + '</p>';
@@ -91,12 +91,13 @@ function displayOverLay (event) {
 
 function generateCardInfo () {
 	'use strict';
+//	console.log(employeeList[index]);
 	overlayImage.src = employeeList[index].picture.large;
 	overlayImage.alt = employeeList[index].name.first + ' ' + employeeList[index].name.last;
 	overlayName.textContent = employeeList[index].name.first + ' ' + employeeList[index].name.last;
 	overlayEmail.textContent = employeeList[index].email;
 	overlayCity.textContent = employeeList[index].location.city;
-	overlayTelephone.textContent = employeeList.cell;
+	overlayTelephone.textContent = employeeList[index].phone;
 	overlayAddress.textContent = employeeList[index].location.street + ', ' +  employeeList[index].location.state + ' ' + employeeList[index].location.postcode;
 	const birthdayHolder = employeeList[index].dob.date;
 	overlayBirthday.textContent = "Birthday: " + birthdayHolder[5] + birthdayHolder[6] + "/" + birthdayHolder[8] + birthdayHolder[9] + "/" + birthdayHolder[1] + birthdayHolder[2];
