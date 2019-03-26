@@ -57,7 +57,7 @@ function generateEmployees (array) {
 		const employeeCity = array[i].location.city;
 		
 		employeeListHTML += '<li class="employees__list--item ' + i + '">';
-		employeeListHTML += '<img src='+ pictureURL + ' alt=' + employeeName +' class="employee-image">';
+		employeeListHTML += '<img src='../techdgree-project-8/js/+ pictureURL + ' alt=' + employeeName +' class="employee-image">';
 		employeeListHTML += '<h2 class="employee-name">'+ employeeName +'</h2>';
 		employeeListHTML += '<p class="employee-email">'+ employeeEmail +'</p>';
 		employeeListHTML += '<p class="employee-city">' + employeeCity + '</p>';
